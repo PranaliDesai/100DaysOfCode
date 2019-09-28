@@ -2,6 +2,9 @@
 #pragma once
 #include <iostream>
 
+using std::cout;
+using std::endl;
+
 template <typename T>
 struct Node {
     struct Node *next;

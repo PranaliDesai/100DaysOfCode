@@ -1,5 +1,5 @@
 // Copyright 2019 Kartik Madhira
-// Output the output of sum of two numbers all in linked list form0
+// Output the output of sum of two numbers all in linked list form
 
 #include "singly_linked_list.h"
 #include <cmath>

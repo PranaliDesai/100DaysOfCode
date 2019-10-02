@@ -30,6 +30,7 @@ class SinglyLinkedList {
 
 template <typename T>
 SinglyLinkedList<T>::~SinglyLinkedList() {
+
     // Delete all the references to any pointers created
     // using new
     Node<T> *temp;
@@ -91,11 +92,10 @@ void SinglyLinkedList<T>::insert(T val) {
 template <typename T>
 void SinglyLinkedList<T>::show_list() {
     Node<T> *temp = tail;
-    while (tail->next != nullptr) {
-        std::cout << tail->value << "\n";
-        tail = tail->next;
+    while (temp != nullptr) {
+        std::cout << temp->value << "\n";
+        temp = temp->next;
     }
-    std::cout << tail->value << "\n";
     tail = temp;
 }
 

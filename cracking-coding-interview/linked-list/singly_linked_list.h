@@ -10,7 +10,6 @@ struct Node {
     struct Node *next;
     T value;
     Node(Node *_next, T _val):next(_next), value(_val) {}
-    Node();
 };
 
 template <typename T>

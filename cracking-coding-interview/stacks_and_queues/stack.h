@@ -40,12 +40,17 @@ Stack<T>::Stack() {
 
 template<typename T>
 void Stack<T>::print_stack() {
-    int len_copy = length;
-    StackNode<T> *temp = top;
-    while (len_copy > 0) {
-        cout << temp->data << endl;
-        temp = temp->next;
-        len_copy--;
+    if (!is_empty()) {
+        int len_copy = length;
+        StackNode<T> *temp = top;
+        while (len_copy > 0) {
+            cout << temp->data << endl;
+            temp = temp->next;
+            len_copy--;
+        }
+    }
+    else {
+    cout << "The list is empty!" << endl;
     }
 }
 
@@ -60,13 +65,15 @@ bool Stack<T>::is_empty() {
 
 template <typename T>
 T Stack<T>::pop() {
-    if (is_empty()) {
+    if (!is_empty()) {
         StackNode<T> *temp = top;
-        delete top;
-        StackNode<T> top = new StackNode<T>(temp->data);
-        return top->data;
+        T val = temp->data;
+        top = top->next;
+        delete temp;
+        length--;
+        return val;
     }
-    return nullptr;
+    cout << "The list is empty" << endl;
 }
 
 template<typename T>
@@ -74,7 +81,6 @@ void Stack<T>::push(T node) {
     if (is_empty()) {
         top = new StackNode<T>(node);
     } else {
-
         StackNode<T> *new_node = new StackNode<T>(node);
         StackNode<T> *temp = top;
         top = new_node;
@@ -90,11 +96,4 @@ T Stack<T>::peek() {
 
 template<typename T>
 Stack<T>::~Stack() {
-
-    while (length > 0) {
-        StackNode<T> *temp = top;
-        delete top;
-        StackNode<T> *top = temp;
-        length--;
-    }
 }

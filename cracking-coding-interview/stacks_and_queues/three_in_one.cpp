@@ -1,17 +1,24 @@
 // Copyright 2019 Kartik Madhira
 
-#include "stack.h"
+#include "queue.h"
 
 
 int main() {
-    Stack<int> new_node;
-    new_node.push(5);
-    new_node.push(7);
-    new_node.push(88);
-    new_node.push(3);
-    new_node.push(12);
-    new_node.print_stack();
-    new_node.pop();
-    new_node.print_stack();
+    Queue<int> new_node;
+    new_node.queue(5);
+    new_node.queue(4);
+    // new_node.deque();
 
+    new_node.queue(2);
+    new_node.queue(1);
+    // new_node.queue(5);
+
+    cout << new_node.deque() << "\n";
+    cout << new_node.deque() << "\n";
+    cout << new_node.deque() << "\n";
+    // cout << new_node.deque() << "\n";
+    // cout << new_node.deque() << "\n";
+    // cout << new_node.deque() << "\n";
+
+    cout << new_node.peek() << "\n";
 }

@@ -26,6 +26,7 @@ public:
     T peek();
     bool is_empty();
     void print_stack();
+    int get_length();
     ~Stack();
 private:
     StackNode<T> *top;
@@ -88,6 +89,13 @@ void Stack<T>::push(T node) {
     }
     length++;
 }
+
+template<typename T>
+int Stack<T>::get_length(){
+    int _length = length;
+    return _length;
+}
+
 
 template<typename T>
 T Stack<T>::peek() {

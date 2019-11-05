@@ -2,82 +2,111 @@
 
 #include <vector>
 #include <memory>
+#include <iostream>
+
+using std::unique_ptr;
+using std::cout;
 
 template<typename T>
 class Node {
  public:
     T value;
     Node(T _value) : value(_value){}
-    *Node(T _vale) : this->value(_value);
-    Node *left;
-    Node *right;
+    unique_ptr<Node<T>> left;
+    unique_ptr<Node<T>> right;
 };
 
 template<typename T>
-class BST {
+class BT {
 private:
-    Node<T> *root_node;
+    unique_ptr<Node<T>> root_node;
 public:
-    BST();
+    BT();
     bool inorder(T val);
-    bool inorder_helper(Node<T> *root, T val);
+    bool inorder_helper(unique_ptr<Node<T>> &root, T val);
     void insert(T val);
-    int insert_helper(Node<T>* root, T val);
+    int insert_helper(unique_ptr<Node<T>> &root, T val);
+    void print_tree_preorder();
+    void print_tree_helper(unique_ptr<Node<T>> &root);
 };
 
 template<typename T>
-BST<T>::BST() {
+BT<T>::BT() {
     root_node = nullptr;
 }
 
 template<typename T>
-bool BST<T>::inorder(T val) {
-    return inorder(root_node, val);
+bool BT<T>::inorder(T val) {
+    return inorder_helper(root_node, val);
 }
 
 template<typename T>
-bool BST<T>::inorder_helper(Node<T> *root, T val) {
-    if (root != nullptr) {
-        if (root->left == val) {
-            return true;
-        } else {
-            inorder_helper(root->left, val);
-        }
+bool BT<T>::inorder_helper(unique_ptr<Node<T>> &root, T val) {
+        if (root->left != nullptr) {
+            if (root->left->value == val) {
+                cout << "Tree contains this value!\n";  
+
+                return true;
+            } else {
+                inorder_helper(root->left, val);
+            }
         if (root->value == val) {
-            return true;
+                cout << "Tree contains this value!\n";  
+                return true;
         }
-        if (root->right == val) {
-            return true;
-        } else {
-            inorder_helper(root->right, val);
+        if (root->right != nullptr) {
+            if (root->right->value == val) {
+                cout << "Tree contains this value!\n";  
+                return true;
+            } else {
+                inorder_helper(root->right, val);
+            }
         }
     }
-    return false;
 }
 
 template<typename T>
-void BST<T>::insert(T val) {
+void BT<T>::insert(T val) {
     insert_helper(root_node, val);
 }
 
 template<typename T>
-int BST<T>::insert_helper(Node<T> *root, T val) {
-    Node<T> *new_node(val);
-    auto new_obj = std::make_unique<Node<T>>(new_node);
+int BT<T>::insert_helper(unique_ptr<Node<T>> &root, T val) {
+    auto temp = std::make_unique<Node<T>>(val);
     if (root_node == nullptr) {
-        root_node = root;
+        root_node = std::move(temp);
         return 0;
     }
-    if (root_node->left == nullptr) {
-        root_node->left = root_node;
+    if (root->left == nullptr) {
+        root->left = std::move(temp);
         return 0;
     }
-    if (root_node->right == nullptr) {
-        root_node->right = root_node;
+    if (root->right == nullptr) {
+        root->right = std::move(temp);
         return 0;
     }
-    insert_helper(root->left, val);
-    insert_helper(root->right, val);
-
+    if (root->left != nullptr) {
+        insert_helper(root.get()->left, val);
+    } else {
+        insert_helper(root.get()->right, val);
+    }
 }
 
+
+template<typename T>
+void BT<T>::print_tree_preorder() {
+    print_tree_helper(root_node);
+}
+template<typename T>
+void BT<T>::print_tree_helper(unique_ptr<Node<T>> &root) {
+   if (root != nullptr) {
+       cout << root->value << "\n";
+   }
+   if (root->left != nullptr) {
+       print_tree_helper(root->left);
+   }
+   if (root->right != nullptr) {
+       print_tree_helper(root->right);
+   }
+
+}

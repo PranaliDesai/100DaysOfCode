@@ -19,10 +19,9 @@ class Node {
 
 template<typename T>
 class BST {
-private:
-    unique_ptr<Node<T>> root_node;
 public:
     BST();
+    unique_ptr<Node<T>> root_node;
     // bool inorder(T val);
     // bool inorder_helper(unique_ptr<Node<T>> &root, T val);
     void insert(T val);

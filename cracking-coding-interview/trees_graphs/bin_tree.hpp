@@ -1,4 +1,5 @@
 // Copyright 2019, Kartik Madhira
+#pragma once
 
 #include <vector>
 #include <memory>
@@ -18,10 +19,11 @@ class Node {
 
 template<typename T>
 class BT {
-private:
-    unique_ptr<Node<T>> root_node;
 public:
     BT();
+    // Making it public so as to be able to make 
+    // all questions accessible directly to root_node
+    unique_ptr<Node<T>> root_node;
     bool inorder(T val);
     bool inorder_helper(unique_ptr<Node<T>> &root, T val);
     void insert(T val);

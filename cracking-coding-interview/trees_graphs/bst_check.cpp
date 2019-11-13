@@ -12,22 +12,22 @@ bool check_bst(const unique_ptr<Node<T>> &root,
     bool right_check = true;
     if (root->left != nullptr) {
         if (root->left->value > max) {
-=            left_check = false;
+            left_check = false;
         }
     }
-     if (root->right != nullptr) {
+    if (root->right != nullptr) {
         if (root->right->value <= min) {
-            cout << root->right->value << " " <<min << "\n";
             right_check = false;
         }
     }
     if (root->left != nullptr) {
-        left_check = (left_check & check_bst(root->left, root->left->value, max));
+        left_check = (left_check & check_bst(root->left, 
+                        root->left->value, max));
     }
     if (root->right != nullptr) {
-        right_check = (right_check & check_bst(root->right, min, root->right->value));
+        right_check = (right_check & check_bst(root->right, 
+                        min, root->right->value));
     }
-  
     return (left_check & right_check);
 }
 

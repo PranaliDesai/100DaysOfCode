@@ -15,7 +15,7 @@ class Node {
     shared_ptr<Node<T>> left;
     shared_ptr<Node<T>> right;
     shared_ptr<Node<T>> parent;
-
+    int nodes_below = 0;
 };
 
 template<typename T>
@@ -54,11 +54,13 @@ int BTModified<T>::insert_helper(shared_ptr<Node<T>> &root, T val) {
     }
     if (root->left == nullptr) {
         temp->parent = root;
+        root->nodes_below++;
         root->left = temp;
         return 0;
     }
     if (root->right == nullptr) {
         temp->parent = root;
+        root->nodes_below++;
         root->right = temp;
         return 0;
     }

@@ -16,3 +16,5 @@
 1. [Integer to Roman](https://leetcode.com/problems/integer-to-roman/) | [Code](leetcode/integer_to_roman.cpp)
 
 1. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | [Code](leetcode/maximum_subarray.cpp)
+
+1. [Maximum Product of Three Numbers](https://leetcode.com/problems/maximum-product-of-three-numbers/) | [Code](https://leetcode.com/problems/maximum-product-of-three-numbers/)

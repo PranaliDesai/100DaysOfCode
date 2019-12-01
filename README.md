@@ -18,3 +18,5 @@
 1. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | [Code](leetcode/maximum_subarray.cpp)
 
 1. [Maximum Product of Three Numbers](https://leetcode.com/problems/maximum-product-of-three-numbers/) | [Code](https://leetcode.com/problems/maximum-product-of-three-numbers/)
+
+1. [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) | [Code](leetcode/max_product_subarray.cpp)

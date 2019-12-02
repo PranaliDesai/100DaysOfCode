@@ -20,3 +20,7 @@
 1. [Maximum Product of Three Numbers](https://leetcode.com/problems/maximum-product-of-three-numbers/) | [Code](https://leetcode.com/problems/maximum-product-of-three-numbers/)
 
 1. [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) | [Code](leetcode/max_product_subarray.cpp)
+
+1. [Merge sorted linked lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [Code](leetcode/merge_sorted_ll.cpp)
+
+1. [Rotate square matrix by 90](https://leetcode.com/problems/rotate-image/) | [Code]()

@@ -23,4 +23,6 @@
 
 1. [Merge sorted linked lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [Code](leetcode/merge_sorted_ll.cpp)
 
-1. [Rotate square matrix by 90](https://leetcode.com/problems/rotate-image/) | [Code]()
+1. [Rotate square matrix by 90](https://leetcode.com/problems/rotate-image/) | [Code](leetcode/rotate_image.cpp)
+
+1. [Unique Paths](https://leetcode.com/problems/unique-paths/) | [Code](leetcode/unique_paths_dfs.cpp)

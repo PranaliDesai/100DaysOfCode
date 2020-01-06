@@ -21,7 +21,7 @@
 
 1. [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) | [Code](leetcode/max_product_subarray.cpp)
 
-1. [Merge sorted linked lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [Code](leetcode/merge_sorted_ll.cpp)
+1. [Merge sorted linked lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [Code](leetcode/merge_sorted_ll.cpp) | **Must Code**
 
 1. [Rotate square matrix by 90](https://leetcode.com/problems/rotate-image/) | [Code](leetcode/rotate_image.cpp)
 

@@ -2,7 +2,7 @@
 
 ### LinkedList 
 
-1. [https://leetcode.com/problems/remove-duplicates-from-sorted-list/]()
+1. [LinkedList duplicates removal](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
 
 
 ## Leetcode 

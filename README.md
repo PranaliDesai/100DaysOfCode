@@ -4,6 +4,7 @@
 
 1. [LinkedList duplicates removal](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
 
+2. [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | [Code](cracking-coding-interview/linked-list/remove_kth_from_end.cpp)
 
 ## Leetcode 
 

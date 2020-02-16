@@ -6,6 +6,9 @@
 
 2. [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | [Code](cracking-coding-interview/linked-list/remove_kth_from_end.cpp)
 
+3. [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | [Code](cracking-coding-interview/linked-list/reverse_ll.cpp)
+
+
 ## Leetcode 
 
 

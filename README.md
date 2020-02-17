@@ -9,6 +9,11 @@
 3. [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | [Code](cracking-coding-interview/linked-list/reverse_ll.cpp)
 
 
+### Stacks
+
+1. [Min stack]()
+
+
 ## Leetcode 
 
 

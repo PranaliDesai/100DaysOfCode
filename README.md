@@ -11,7 +11,11 @@
 
 ### Stacks
 
-1. [Min stack]()
+1. [Min stack CTCI Q.32 Code]() | [Code](cracking-coding-interview/stacks_and_queues/stack_min.cpp)
+
+### Trees
+
+1. [Minimal depth](https://leetcode.com/problems/minimum-depth-of-binary-tree/) | [Code](cracking-coding-interview/trees/min_tree_leetcode.cpp)
 
 
 ## Leetcode 

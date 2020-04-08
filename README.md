@@ -16,7 +16,7 @@
 ### Trees
 
 1. [Minimal depth](https://leetcode.com/problems/minimum-depth-of-binary-tree/) | [Code](cracking-coding-interview/trees/min_tree_leetcode.cpp)
-
+2. [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/submissions/) | [Code](leetcode/balanced_tree.cpp)
 
 ## Leetcode 
 

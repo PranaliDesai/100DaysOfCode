@@ -7,11 +7,14 @@ struct map {
 };
 
 
+void f(int *p){
+    std::cout << *p << std::endl;
+}
+
 int main() {
-    map m = {1,"lol"};
-    // int x_tie;
-    // std::string s_tie;
-    auto[x_tie, s_tie] = m;
-    std::cout << x_tie << " " << s_tie << "\n";
-    return 0;
+    int *p,c;
+    c = 5;
+    p = &c;
+    f(p);
+    // std::cout << *p << std::endl;
 }

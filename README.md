@@ -83,3 +83,4 @@ These are a collection of algorithms/problems likely to be asked in Computer Vis
 
 1. [Implement non maximal suppression as efficiently as you can]() | [Code]()
 
+1. [Code up a gradient descent]() | [Code]()

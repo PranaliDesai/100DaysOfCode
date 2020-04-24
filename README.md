@@ -53,7 +53,7 @@
 
 These are a collection of algorithms/problems likely to be asked in Computer Vision based coding interviews, partly taken from this [subreddit](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)
 
-1. [Apply a Box filter over an image, given an Image class]() | [Code]()
+1. [Apply a Box filter over an image, given an Image class]() | [Code](cv_coding/src/Image.cpp)
 
 1. [Harris corner detector, given an Image class]() | [Code]()
 

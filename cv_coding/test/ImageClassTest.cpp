@@ -59,36 +59,47 @@ TEST(checkSize, shouldEqual) {
 // }
 
 
-TEST(sobelTest, shouldEqual) {
+// TEST(sobelTest, shouldEqual) {
+//     Image img;
+//     img.loadImage("../download.jpeg");
+//     img.convert2D();
+//     cv::Mat ret_img = img.applySobel(img.image1d, img.getHeight(), img.getWidth(), 0);
+//     cv::Mat sobel;
+//     cv::Sobel(img.getImage(), sobel, -1, 0, 1);
+//     double minVal; 
+//     double maxVal; 
+//     cv::Point minLoc; 
+//     cv::Point maxLoc;
+
+//     minMaxLoc(ret_img, &minVal, &maxVal, &minLoc, &maxLoc );
+
+//     cout << "min val ret_img: " << minVal << endl;
+//     cout << "max val ret_img:" << maxVal << endl;
+
+
+//     minMaxLoc(sobel, &minVal, &maxVal, &minLoc, &maxLoc );
+
+//     cout << "min val sobel: " << minVal << endl;
+//     cout << "max val sobel:" << maxVal << endl;
+//     cout << sobel.type() << "\n";
+//     int ret_val = img.showImage(ret_img);
+//     img.showImage(img.getImage());
+//     ASSERT_EQ(ret_val , 0);
+// }
+
+
+TEST(harrisCheck, shouldEqual) {
     Image img;
     img.loadImage("../download.jpeg");
     img.convert2D();
-    cv::Mat ret_img = img.applySobel(img.image1d, img.getHeight(), img.getWidth(), 0);
-    cv::Mat sobel;
-    cv::Sobel(img.getImage(), sobel, -1, 0, 1);
-    double minVal; 
-    double maxVal; 
-    cv::Point minLoc; 
-    cv::Point maxLoc;
-
-    minMaxLoc(ret_img, &minVal, &maxVal, &minLoc, &maxLoc );
-
-    cout << "min val ret_img: " << minVal << endl;
-    cout << "max val ret_img:" << maxVal << endl;
-
-
-    minMaxLoc(sobel, &minVal, &maxVal, &minLoc, &maxLoc );
-
-    cout << "min val sobel: " << minVal << endl;
-    cout << "max val sobel:" << maxVal << endl;
-    cout << sobel.type() << "\n";
-    int ret_val = img.showImage(ret_img);
-    img.showImage(sobel);
-    ASSERT_EQ(ret_val , 0);
+    // std::cout << img.getPixelat1D(54,6) << " " << 
+    // img.getPixelat2D(54,6) << "\n";
+    // cv::Mat orig_img = cv::imread("../download.jpeg", 0);
+    // int size = orig_img.cols*orig_img.rows;
+    cv::Mat ret_img = img.getHarrisCorners(1000000);
+    img.showImage(ret_img);
+    ASSERT_EQ(0, 0);
 }
-
-
-
 
 // TEST(convertFrom1DTest, shouldEqual) {
 //     Image img;

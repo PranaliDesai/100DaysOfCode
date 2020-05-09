@@ -32,7 +32,7 @@ public:
     cv::Mat applyBoxFilter(const std::vector<int> &image1d, int ker_width, int ker_height);
     cv::Mat optimizedBoxFilter(const std::vector<int> image1d, int ker_height, int ker_width,
                                 int img_height, int img_width);
-
+    cv::Mat getHarrisCorners(int response_thresh);
     cv::Mat applySobel(const std::vector<int> image1d, int img_height, int img_width, bool dx);
 };
 
@@ -229,4 +229,42 @@ cv::Mat Image::applySobel(const vector<int> image1d, int img_height, int img_wid
     cv::Mat ret_img = convert1D(image1Dvec, img_height, img_width);
     ret_img.convertTo(new_img, CV_8UC1);
     return ret_img;
+}
+
+
+
+cv::Mat Image::getHarrisCorners(int response_thresh) {
+    // 1. Get the X and Y gradients of the image.
+    // 2. Construct the weight matrix
+    //    | Ix*Ix , Ix*Iy |
+    //    | Ix*Iy , Iy*Iy |
+    // cv::Mat Ix = applySobel(image1d, height, width, 1);
+    // cv::Mat Iy = applySobel(image1d, height, width, 0);
+    cv::Mat Ix;
+    cv::Mat Iy;
+
+    cv::Sobel(getImage(), Ix, -1, 1, 0);
+    cv::Sobel(getImage(), Iy, -1, 0, 1);
+
+    cv::Mat ret_image = getImage();
+    cout << Ix.cols << " " << Iy.rows << "\n";
+    // Get the corresponding hessian matrix for each of the pixels
+    for (int i = 1; i < Ix.rows - 1; i++) {
+        for (int j = 1; j < Iy.cols - 1; j++) {
+            cv::Mat weight_matrix(2, 2, CV_64FC1);
+            weight_matrix.at<float>(0, 0) = Ix.at<uchar>(i, j)*Ix.at<uchar>(i, j); weight_matrix.at<float>(0, 1) = Ix.at<uchar>(i, j)*Iy.at<uchar>(i, j);
+            weight_matrix.at<float>(1, 0) = Ix.at<uchar>(i, j)*Iy.at<uchar>(i, j); weight_matrix.at<float>(1, 1) = Iy.at<uchar>(i, j)*Iy.at<uchar>(i, j);
+            cv::Vec2b eig_values;
+            cv::eigen(weight_matrix, eig_values);
+            // Calculate the harris corner score
+            float l1 = eig_values[0];
+            float l2 = eig_values[1];
+
+            float score = l1*l2 - 0.04*pow(l1 + l2, 2);
+            if (response_thresh < score) {
+                cv::circle(ret_image, cv::Point(i, j), 1, cv::Scalar(255, 0, 0));
+            }
+        }
+    }
+    return ret_image;
 }
